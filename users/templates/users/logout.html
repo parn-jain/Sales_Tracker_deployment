@@ -1,0 +1,21 @@
+{% extends "loginbase.html" %}
+
+{% load static %}
+
+
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'users/logout.css' %}">
+{% endblock %}
+
+
+{% block title %}Logout{% endblock  %}
+
+
+{% block content %}
+
+<p class = "out_msg">You have be successfully logged out</p>
+
+{% endblock %}
+        
+        
+{% block javascript %}{% endblock %}

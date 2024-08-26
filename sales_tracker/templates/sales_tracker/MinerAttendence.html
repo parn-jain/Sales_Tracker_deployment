@@ -1,0 +1,27 @@
+{% extends "innerbase.html" %}
+{% load static %}
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/MinerAttendence.css' %}">
+{% endblock %}
+
+{% block title %}Attendance{% endblock %}
+
+{% block content %}
+<h1>Hello {{ u }}</h1>
+<img src="{% static 'bar_chart.png' %}" alt="Attendance Chart">
+
+<div class="card-container">
+    <div class="card">
+        <p>Total Days: {{ days.Tdays }}</p>
+    </div>
+    <div class="card">
+        <p>Present: {{ days.Pdays }}</p>
+    </div>
+    <div class="card">
+        <p>Absent: {{ days.Adays }}</p>
+    </div>
+    <div class="card">
+        <p>Late: {{ days.Ldays }}</p>
+    </div>
+</div>
+{% endblock %}

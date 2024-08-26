@@ -1,0 +1,44 @@
+{% extends "innerbase.html" %}
+
+{% load static %}
+
+
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/detail.css' %}"> 
+{% endblock %}
+
+
+{% block title %}Detail{% endblock  %}
+
+
+{% block content %}
+<h1>{{ detail.organisation_name | upper}}</h1>
+
+{% include "include/dash.html" %}
+
+<section>
+    <div class = "client">
+        <h2>Client Details</h2>
+        <p><strong>Name :</strong> {{ detail.first_name }} {{ detail.last_name }}</p>
+        <p><strong>Email :</strong> {{ detail.email_id }}</p>
+        <p><strong>Contact NO. :</strong> {{ detail.contact_number }}</p>
+        <p><strong>Mobile No. :</strong> {{ detail.customer_mobile_number }}</p>
+        <p><strong>Address :</strong> {{ detail.customer_address }}</p>
+        </div>
+
+    <hr>
+    <div class = "info">
+    <p><strong>Company Revenue :</strong> {{ detail.company_revenue }}</p>
+    <p><strong>Company Employee Size :</strong> {{ detail.company_emp_size }}</p>
+    <p><strong>competition of AT :</strong> {{ detail.competition_of_AT }}</p>
+    <p><strong>Stock Market Registered :</strong> {{ detail.stock_market_registered }}</p>
+    <p><strong>IT spending Budget :</strong> {{ detail.IT_spending_budget }}</p>
+    <p><strong>Source of Data :</strong> {{ detail.source_of_data_mining }}</p>
+    <p><strong>Influncer :</strong> {{ detail.influncer }}</p>
+    <p><strong>Desition Maker :</strong> {{ detail.desition_maker }}</p>
+    </div>
+</section>
+
+{% endblock %}
+        
+{% block javascript %}{% endblock %}

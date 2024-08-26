@@ -1,0 +1,51 @@
+db.sqlite3
+.db.sqlite3
+*.pyc
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Pipenv
+Pipfile.lock
+
+# Python-specific cache files
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+# Django migrations
+**/migrations/
+!**/migrations/__init__.py
+
+# Django static files
+staticfiles/
+static/
+media/
+
+# SQLite database files
+*.sqlite3
+
+# Local settings
+local_settings.py
+
+# Environment variables
+.env
+
+# IDE-specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# MacOS-specific files
+.DS

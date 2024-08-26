@@ -1,0 +1,32 @@
+{% extends "innerbase.html" %}
+
+{% load static %}
+
+
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/join.css' %}">
+    
+{% endblock %}
+
+
+{% block title %}Join Meeting{% endblock  %}
+
+
+{% block content %}
+<h1>Join Room</h1>
+{% include "include/dash.html" %}
+<div class="container">
+
+    <form method="POST">
+
+      <input type="hidden" name="csrfmiddlewaretoken" value="pxYoceV9VGyk4sC7q1t2Y57ZsbGRrE4v25jIn0Zt5OzUp3f3yK3nCcy1P0ZUrK1O">
+      <label for="id">Room id:</label>
+      <input type="text" id="room_id" name="id"><br>
+      <button>Join</button>
+
+    </form>
+  </div>
+
+{% endblock %}
+        
+{% block javascript %}{% endblock %}

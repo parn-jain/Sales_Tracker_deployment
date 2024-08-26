@@ -1,0 +1,30 @@
+{% extends "loginbase.html" %}
+
+{% load static %}
+
+
+{% block css_link %}
+    <link rel="stylesheet" href="{% static 'sales_tracker/mining.css' %}">
+{% endblock %}
+
+
+{% block title %}Calling{% endblock  %}
+
+
+{% block content %}
+
+<h1>Calling Details</h2>
+{% include "include/dash.html" %}
+
+<form method = "POST" class = "form">
+    {% csrf_token %}
+    <div class = "form_control" >
+    {{form}}
+    </div>
+    <button type = "submit">Start Call</button>
+</form>
+
+
+{% endblock %}
+        
+{% block javascript %}{% endblock %}

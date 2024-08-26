@@ -1,0 +1,106 @@
+{% extends "innerbase.html" %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block css_link %}
+    <link rel="stylesheet" href="{% static 'sales_tracker/quote.css' %}">
+{% endblock %}
+
+
+{% block title %}New Quote{% endblock  %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+  <form method="POST">
+    {% csrf_token %}
+    <div class="row mt-2 mb-2">
+      <div class="col-md-3" style="color: white;">
+        <h3>Create Quote</h3>
+      </div>
+      <div class="col-md-7"> </div>
+      <div class="col-md-2">
+
+        <div class="row buttons ">
+          <div class="col-md-6 d-flex  px-2 ">
+            <button type="submit" class="quote_button1">Submit</button>
+          </div>
+          <div class="col-md-6 d-flex  px-2">
+            <button type="button" class="quote_button2">Cancel</button>
+          </div>
+        </div>
+
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6 pt-5 pb-5 px-4" style="color: white;">
+          <div class="form-group">
+          {{form.title|as_crispy_field}}
+          </div>
+          <div class="form-group">
+          {{form.valid_until|as_crispy_field}}
+          </div>
+          <div class="form-group">
+          {{form.approval_status|as_crispy_field}}
+          </div>
+          <div class="form-group">
+          {{form.opportunity|as_crispy_field}}
+          </div>
+          <div class="form-group">
+          {{form.quote_stage|as_crispy_field}}
+          </div>
+          <div class="form-group">
+          {{form.invoice_status|as_crispy_field}}
+          </div>
+          <div class="form-group">
+          {{form.approval_issues_description|as_crispy_field}}
+          </div>
+          <div class="form-group">
+          {{form.lead_source|as_crispy_field}}
+          </div>
+          <div class="form-group">
+          {{form.account|as_crispy_field}}
+          </div>
+          <div class="form-group">
+          {{form.contact|as_crispy_field}}
+           </div>
+        </div>
+        <div class="col-md-6 pt-5 px-4" style= "color: white ; border-left: 1px solid #d8d7d7;">
+          <div class="form-group">
+          {{form.billing_address|as_crispy_field}}
+        </div>
+          <div class="form-group">
+          {{form.shipping_address|as_crispy_field}}
+        </div>
+          <div class="form-group">
+          {{form.total|as_crispy_field}}
+        </div>
+          <div class="form-group">
+          {{form.discount|as_crispy_field}}
+        </div>
+          <div class="form-group">
+          {{form.sub_total|as_crispy_field}}
+        </div>
+          <div class="form-group">
+          {{form.shipping|as_crispy_field}}
+        </div>
+          <div class="form-group">
+          {{form.shipping_tax|as_crispy_field}}
+        </div>
+          <div class="form-group">
+          {{form.tax|as_crispy_field}}
+        </div>
+          <div class="form-group">
+          {{form.grandtotal|as_crispy_field}}
+        </div>
+        </div>
+      </div>
+  </form>
+</div>
+
+{% endblock %}
+        
+{% block javascript %}{% endblock %}

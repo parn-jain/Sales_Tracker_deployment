@@ -1,0 +1,26 @@
+{% extends "innerbase.html" %}
+{% load static %}
+
+{% block title %}Admin{% endblock %}
+
+{% block css_link %}
+{% endblock %}
+
+{% block content %}
+<h1>{{admin_message}}</h1>
+<h1>Attendance List</h1>
+<table>
+    <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
+    {% for attendance in attendances %}
+    <tr>
+        <td>{{ attendance.user.username }}</td>
+        <td>{{ attendance.date }}</td>
+        <td>{{ attendance.status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

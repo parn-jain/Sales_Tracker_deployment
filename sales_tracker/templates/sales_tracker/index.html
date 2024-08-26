@@ -1,0 +1,131 @@
+{% extends "innerbase.html" %}
+
+{% load static %}
+
+
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/index3.css' %}">
+<script src="chart.js"></script>
+
+{% endblock %}
+
+
+{% block title %}DashBoard{% endblock  %}
+
+
+{% block content %}
+{% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+  <div class="content " >
+        <div class="heading title_animation">
+            Welcome to the Aapai Technologies
+        </div>
+
+    <div class="flex-container cards-container z-[-10]  " >
+        <div class="card ">
+            <div class="card-body ">
+                <h5 class="card-title" style="color: #262626;"><b>Today's Mining</b></h5>
+                <p class="card-text">{{ mining_count }}/40</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #262626;"><b>Today's Opportunity</b></h5>
+                <p class="card-text">{{ Opportunity_count }}</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #262626;"><b>Today's Contacts</b></h5>
+                <p class="card-text">{{ contact_count }}</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #262626;"><b>Today's Leads</b></h5>
+                <p class="card-text">{{ lead_count }}</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <div class="flex-container charts-container">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #262626;"><b>Weekly Data</b></h5>
+                <canvas id="weeklyChart" width="130" height="150" ></canvas>
+                <p class="card-text backgroundColor: '#FF6600'">{{ mining_count }}/40</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #262626;"><b>Monthly Data</b></h5>
+                <canvas id="monthlyChart" width="130" height="100"></canvas>
+                <p class="card-text">{{ mining_count }}</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #262626;"><b>Quarterly Data</b></h5>
+                <canvas id="quarterlyChart" width="130" height="100"></canvas>
+                <p class="card-text">{{ mining_count }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+  
+        
+
+
+
+{% endblock %}
+
+{%comment%}
+<header>
+    <h1>Dashboard</h1>
+</header>
+
+<nav>
+    <a href="{% url 'mining' %}">Data Mining</a>
+    <a href="{% url 'data' %}">Data Show</a>
+    <a href="{% url 'call' %}">Calling Options</a>
+</nav>
+
+<div class="container">
+    <div class="statistics">
+        <h2>Statistics</h2>
+        <p>Some statistics data here...</p>
+    </div>
+
+    <div class="profile"><a href = "{% url "detailprofile" %}">
+        <h2>Profile</h2>
+        <p>Name: {{user.username}}</p>
+        <p>Email: {{user.email}}</p>
+    </a></div>
+</div>
+
+<footer>
+    <h2>Statistics Options</h2>
+    <p>Additional statistics options...</p>
+</footer>
+
+{%endcomment%}
+
+
+

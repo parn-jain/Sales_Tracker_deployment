@@ -1,0 +1,25 @@
+{% extends "innerbase.html" %}
+
+{% load static %}
+
+
+{% block css_link %}
+    <link rel="stylesheet" href="{% static 'sales_tracker/mining.css' %}">
+{% endblock %}
+
+
+{% block title %}New Contact{% endblock  %}
+
+
+{% block content %}
+
+<h1>Data Mining </h2>
+{% include "include/dash.html" %}
+your message :
+<Span>{{message}}</Span>
+
+<a href="{% url 'create_contact' %}">create another contact</a>
+
+{% endblock %}
+        
+{% block javascript %}{% endblock %}

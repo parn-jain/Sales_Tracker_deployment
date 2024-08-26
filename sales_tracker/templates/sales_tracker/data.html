@@ -1,0 +1,48 @@
+{% extends "innerbase.html" %}
+
+{% load static %}
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/data.css' %}">
+{% endblock %}
+
+
+{% block title %}Data{% endblock  %}
+
+
+{% block content %}
+
+<h1>DATA SHOWCASE</h1>
+
+{%comment%}
+{% include "include/dash.html" %}
+{%endcomment%}
+<section class = "main_container">
+
+{% for data in data_list %}
+
+<a href = "{% url "detaildata" data %}">
+<div class = "container">
+<h2>{{data}}</h2>   
+{% if data.customer_first_name %}
+<!-- <h1>Hello</h1> -->
+<span><strong>Client</strong> : {{data.customer_first_name}} {{data.customer_last_name}}</span>
+<span><strong>Email</strong> : {{data.customer_email}}</span>
+{% elif data.first_name %}
+<span><strong>Client</strong> : {{ data.first_name }} {{ data.last_name }}</span>
+<span><strong>Email</strong> : {{ data.email_id }}</span>
+{% elif data.opportunity_name %}
+<span><strong>Name</strong> : {{ data.opportunity_name }}</span>
+<span><strong>Probability</strong> : {{ data.probability }}</span>
+<span><strong>assigned_to</strong> : {{ data.assigned_to }}</span>
+{% endif %}
+
+</div>
+</a>
+
+{% endfor %}
+</section>
+
+{% endblock %}
+      
+
+{% block javascript %}{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "loginbase.html" %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="{% static 'users/reason.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    {% if messages %}
+      {% for message in messages %}
+      <div class="col-md-4"><h3>{{ message }}</h3></div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  
+  <!-- Add this block to display error messages -->
+  {% if error_message %}
+  <div class="alert alert-danger" role="alert">
+      {{ error_message }}
+  </div>
+  {% endif %}
+  <div class="login-wrapper">
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <form class="login-box" method="POST" action="{% url 'reason' %}" id="logoutForm">
+        {% csrf_token %}
+      
+        <div>
+            <img class="hand" src="/static/hand.png" alt="Handshaking Image">
+        </div>
+        <div class="login-header">
+            <div class="leaving">Reason For Leaving</div>
+            <div>
+                <p>You need to complete at least 40 tasks</p>
+            </div>
+            <div class="input-box">
+                <textarea class="logoutreason" name="logout_reason" rows="4" cols="50" placeholder="Enter your reason here" required></textarea>
+                <br><br>
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+{% block javascript %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.getElementById('logoutForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting immediately
+        
+        // Show SweetAlert2 popup
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'You are about to log out. Do you want to proceed?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, log out',
+            cancelButtonText: 'No, cancel',
+            reverseButtons: true // Optional: reverses the order of confirm and cancel buttons
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Submit the form after showing the popup
+                document.getElementById('logoutForm').submit();
+            }
+        });
+    });
+</script>
+{% endblock %}
+

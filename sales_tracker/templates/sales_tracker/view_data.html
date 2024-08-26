@@ -1,0 +1,48 @@
+{% extends "innerbase.html" %}
+
+{% load static %}
+
+
+{% block css_link %}
+    <link rel="stylesheet" href="{% static 'sales_tracker/mining.css' %}">
+{% endblock %}
+
+
+{% block title %}New Contact{% endblock  %}
+
+
+{% block content %}
+
+<h1>view</h1>
+
+<form method = "POST" class = "form">
+    {% csrf_token %}
+    <div class = "form_control" >
+    {{form}}
+    </div>
+    <button type = "submit">Submit</button>
+</form>
+
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for data in datas %}
+    
+        <tr>
+            <td>{{data.organisation_name}}</td>
+            <td>{{data.customer_first_name}} {{data.customer_last_name}}</td>
+            
+        </tr>
+        
+        {%endfor%}
+    </tbody>
+</table>
+
+{% endblock %}
+        
+{% block javascript %}{% endblock %}

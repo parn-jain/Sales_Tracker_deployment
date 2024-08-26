@@ -1,0 +1,82 @@
+{% extends "innerbase.html" %}
+
+{% load static %}
+
+
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/index2.css' %}">
+{% endblock %}
+
+
+{% block title %}DashBoard{% endblock  %}
+
+
+{% block content %}
+{% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+<div class="outer-container">
+<div class="outer-container">
+        <div class="flex-container">
+            <!-- Text Box -->
+            <div class="text-box">
+                <p class="shanaya">Track your sales with <span class = "sh">Shanaya</span></p>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+                <div class="button-group">
+                    <a href="#" class="btn btn-primary">Start Free Trial</a>
+                    <a href="#" class="btn btn-primary">Watch Video</a>
+                </div>
+            </div>
+
+            <!-- Image Box -->
+            <div class="image-box">
+                <img src="{% static '/img.jpg' %}" alt="Sales Tracking Image">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{%comment%}
+<header>
+    <h1>Dashboard</h1>
+</header>
+
+<nav>
+    <a href="{% url 'mining' %}">Data Mining</a>
+    <a href="{% url 'data' %}">Data Show</a>
+    <a href="{% url 'call' %}">Calling Options</a>
+</nav>
+
+<div class="container">
+    <div class="statistics">
+        <h2>Statistics</h2>
+        <p>Some statistics data here...</p>
+    </div>
+
+    <div class="profile"><a href = "{% url "detailprofile" %}">
+        <h2>Profile</h2>
+        <p>Name: {{user.username}}</p>
+        <p>Email: {{user.email}}</p>
+    </a></div>
+</div>
+
+<footer>
+    <h2>Statistics Options</h2>
+    <p>Additional statistics options...</p>
+</footer>
+
+{%endcomment%}
+
+
+
+        
+{% block javascript %}{% endblock %}
+

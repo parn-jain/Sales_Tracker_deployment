@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar with Hamburger Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <h1>Content Here</h1>
+        <!-- Your content goes here -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+***************************
+
+/* styles.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    background-color: #333;
+    color: white;
+    transition: 0.3s;
+    padding: 20px;
+    z-index: 1000; /* Ensure it is on top of other content */
+}
+
+.sidebar nav a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.sidebar nav a:hover {
+    background-color: #575757;
+}
+
+.close-btn {
+    font-size: 30px;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.main-content {
+    margin-left: 0;
+    transition: margin-left 0.3s;
+}
+
+.hamburger {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1001; /* Ensure it is on top of other content */
+}
+
+/* Sidebar visible */
+.sidebar.show {
+    left: 0;
+}
+
+.main-content.shift {
+    margin-left: 250px;
+}
+*******************
+
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.getElementById('sidebar');
+    const hamburger = document.getElementById('hamburger');
+    const closeBtn = document.getElementById('closeBtn');
+
+    // Toggle sidebar visibility
+    hamburger.addEventListener('click', () => {
+        sidebar.classList.add('show');
+        document.querySelector('.main-content').classList.add('shift');
+    });
+
+    // Close the sidebar
+    closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('show');
+        document.querySelector('.main-content').classList.remove('shift');
+    });
+
+    // Close sidebar if clicked outside of it
+    document.addEventListener('click', (event) => {
+        if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+            sidebar.classList.remove('show');
+            document.querySelector('.main-content').classList.remove('shift');
+        }
+    });
+});
+
+
+########################################################################################################################
+1. document.addEventListener('DOMContentLoaded', () => { ... });
+Purpose: This ensures that the JavaScript code inside runs only after the HTML document has been completely loaded and parsed.
+Why?: It prevents errors that can occur if the JavaScript tries to access elements before they exist in the DOM.
+2. const sidebar = document.getElementById('sidebar');
+Purpose: This line gets the HTML element with the id of 'sidebar' and stores it in a variable named sidebar.
+Why?: This allows you to easily reference and manipulate the sidebar element in your JavaScript code.
+3. const hamburger = document.getElementById('hamburger');
+Purpose: This line gets the HTML element with the id of 'hamburger' and stores it in a variable named hamburger.
+Why?: This lets you add event listeners to the hamburger button to control the sidebar.
+4. const closeBtn = document.getElementById('closeBtn');
+Purpose: This line gets the HTML element with the id of 'closeBtn' and stores it in a variable named closeBtn.
+Why?: This allows you to control the close button functionality for hiding the sidebar.
+5. hamburger.addEventListener('click', () => { ... });
+Purpose: Adds an event listener to the hamburger button so that when it is clicked, the function inside the parentheses runs.
+Function:
+sidebar.classList.add('show'); adds the show class to the sidebar, making it visible.
+document.querySelector('.main-content').classList.add('shift'); adds the shift class to the main content, shifting it to the right to make space for the sidebar.
+6. closeBtn.addEventListener('click', () => { ... });
+Purpose: Adds an event listener to the close button so that when it is clicked, the function inside the parentheses runs.
+Function:
+sidebar.classList.remove('show'); removes the show class from the sidebar, hiding it.
+document.querySelector('.main-content').classList.remove('shift'); removes the shift class from the main content, restoring its original position.
+7. document.addEventListener('click', (event) => { ... });
+Purpose: Adds an event listener to the entire document that listens for click events.
+Function:
+if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) { ... } checks if the click happened outside both the sidebar and the hamburger button.
+sidebar.classList.remove('show'); hides the sidebar if the click was outside.
+document.querySelector('.main-content').classList.remove('shift'); restores the main content’s position if the sidebar is hidden.
+
+tauba tauba steps

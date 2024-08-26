@@ -1,0 +1,22 @@
+{% extends "innerbase.html" %}
+
+{% load static %}
+
+
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/call.css' %}"> 
+{% endblock %}
+
+
+{% block title %}Web Call{% endblock  %}
+
+
+{% block content %}
+{% include "include/dash.html" %}
+
+<a href = "{% url "calling_details" %}">new meet</a>
+<a href = "{% url "joinmeet" %}">join meet</a>
+
+{% endblock %}
+        
+{% block javascript %}{% endblock %}

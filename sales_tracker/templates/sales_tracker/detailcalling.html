@@ -1,0 +1,45 @@
+{% extends "innerbase.html" %}
+
+{% load static %}
+
+
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/detail.css' %}"> 
+{% endblock %}
+
+{% block title %}Web Call{% endblock  %}
+
+
+{% block content %}
+
+<h1>{{ mining_data.organisation_name | upper}}</h1>
+
+{% include "include/dash.html" %}
+
+<section>
+    <div class = "client">
+        <h2>Client Details</h2>
+        <p><strong>Name :</strong> {{ mining_data.customer_first_name }} {{ mining_data.clinet_last_name }}</p>
+        <p><strong>Email :</strong> {{ mining_data.customer_email }}</p>
+        <p><strong>Contact NO. :</strong> {{ mining_data.customer_contact_number }}</p>
+        <p><strong>Mobile No. :</strong> {{ mining_data.customer_mobile_number }}</p>
+        <p><strong>Address :</strong> {{ mining_data.customer_address }}</p>
+        </div>
+
+    <hr>
+    <div class = "info">
+    <p><strong>Company Revenue :</strong> {{ mining_data.company_revenue }}</p>
+    <p><strong>Company Employee Size :</strong> {{ mining_data.company_emp_size }}</p>
+    <p><strong>competition of AT :</strong> {{ mining_data.competition_of_AT }}</p>
+    <p><strong>Stock Market Registered :</strong> {{ mining_data.stock_market_registered }}</p>
+    <p><strong>IT spending Budget :</strong> {{ mining_data.IT_spending_budget }}</p>
+    <p><strong>Source of Data :</strong> {{ mining_data.source_of_data_mining }}</p>
+    <p><strong>Influncer :</strong> {{ mining_data.influncer }}</p>
+    <p><strong>Desition Maker :</strong> {{ mining_data.desition_maker }}</p>
+    <p><strong>asigned_to :</strong> {{ mining_data.assigned_to }}</p>
+    </div>
+</section>
+
+{% endblock %}
+        
+{% block javascript %}{% endblock %}

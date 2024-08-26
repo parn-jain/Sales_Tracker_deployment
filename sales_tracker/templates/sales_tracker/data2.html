@@ -1,0 +1,37 @@
+    {% extends "innerbase.html" %}
+    {% load static %}
+    {% block css_link %}
+    <link rel="stylesheet" href="{% static 'sales_tracker/data.css' %}">
+    {% endblock %}
+
+
+    {% block title %}Data{% endblock  %}
+
+
+    {% block content %}
+
+    <h1 style="color:white;">DATA SHOWCASE</h1>
+    
+
+    {%comment%}
+    {% include "include/dash.html" %}
+    {%endcomment%}
+    <section class = "main_container">
+
+    {% for data in orgs_list %}
+
+    <a href = "{% url "tocalldata" data %}">
+    <div class = "container">
+    <h2>{{data}}</h2>
+    <span><strong>Client</strong> : {{data.first_name}} {{data.last_name}}</span>
+    <span><strong>Email</strong> : {{data.email_id}}</span>
+    </div>
+    </a>
+
+    {% endfor %}
+    </section>
+
+    {% endblock %}
+        
+
+    {% block javascript %}{% endblock %}
