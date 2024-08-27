@@ -11,6 +11,9 @@ urlpatterns = [
     path("agent/<pk>", login_required(views.DetailCalling), name="detail_agent"),
 
     path("Attendence/", login_required(views.Attendence), name="attendance"),
+    path("reports/", login_required(views.Admin_reports.as_view()), name="reports"),
+    path("reports/MinerActivity/", login_required(views.MinerActivity.as_view()), name="MinerActivity"),
+    path("reports/LeadsActivity/", login_required(views.LeadsActivity.as_view()), name="LeadsActivity"),
 
     path("mining", login_required(views.mining_view), name = "mining"),
     path("data", login_required(views.DataView.as_view()), name = "data"),

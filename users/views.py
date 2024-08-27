@@ -21,6 +21,7 @@ from django.contrib.auth import authenticate, login
 from django.utils import timezone
 import datetime
 from sales_tracker.analysis import generate_bar_chart, TotalDays
+from sales_tracker.admin_analysis import admin_attendence_graph
 
 # MY CODE 
 
@@ -217,6 +218,7 @@ def manual_login(request):
                 if user_profile.can_login:
                     login(request, user)
                     generate_bar_chart(request)
+                    admin_attendence_graph()
                     # print(timezone.now().time())
                     current_date = timezone.now().date()
                     Nuser = request.user.id

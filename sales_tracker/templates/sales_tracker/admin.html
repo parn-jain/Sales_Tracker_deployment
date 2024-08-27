@@ -1,26 +1,24 @@
-{% extends "innerbase.html" %}
+{% extends "adminbase.html" %}
 {% load static %}
 
 {% block title %}Admin{% endblock %}
 
 {% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/MinerAttendence.css' %}">
 {% endblock %}
 
+
+
 {% block content %}
-<h1>{{admin_message}}</h1>
-<h1>Attendance List</h1>
-<table>
-    <tr>
-        <th>User</th>
-        <th>Date</th>
-        <th>Status</th>
-    </tr>
-    {% for attendance in attendances %}
-    <tr>
-        <td>{{ attendance.user.username }}</td>
-        <td>{{ attendance.date }}</td>
-        <td>{{ attendance.status }}</td>
-    </tr>
-    {% endfor %}
-</table>
+<img src="{% static 'admin_attendence.png' %}" alt="Attendance Chart">
+
+<div class="card-container">
+    <div class="card">
+        <p>Attendence : {{ att }}</p>
+    </div>
+    <div class="card">
+        <p>Late : {{ late }}</p>
+    </div>
+</div>
 {% endblock %}
+

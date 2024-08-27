@@ -42,7 +42,7 @@ class AttendanceRecord(models.Model):
     status = models.CharField(
         max_length=20,
         choices=[('Present', 'Present'), ('Absent', 'Absent'), ('Late', 'Late')],
-        default='Present'  # Default to 'Absent' for existing records
+        default='Absent'  # Default to 'Absent' for existing records
     )
 
     def __str__(self):

@@ -1,0 +1,146 @@
+{% extends "adminbase.html" %}
+{% load static %}
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/reports.css' %}">
+<!-- Include Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pVILFJ1xXg+v9mN3PFgZxVcPgxdmE0t5EUaO6bD1v1oIHXkbM9d1xG4x8x1DppQypfR3o8cNfKtvVRyytC5CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+{% block title %}Data Mining{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h1>Data Mining Reports</h1>
+
+    <!-- Attendance Section -->
+    <section class="section">
+        <h2>Attendance</h2>
+        <div class="card-container">
+            <!-- Break Report Card -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Break Report</h3>
+                    <p>Download reports of breaks taken by employees.</p>
+                </div>
+            </div>
+            <!-- Daily Attendance Card -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Daily Attendance</h3>
+                    <p>Download daily attendance reports, including punch-in and punch-out times.</p>
+                </div>
+            </div>
+            <!-- Monthly Attendance Card -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Monthly Attendance</h3>
+                    <p>Download monthly attendance reports, including punch-in and punch-out times.</p>
+                </div>
+            </div>
+            <!-- Monthly In-Out Card -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Monthly In-Out</h3>
+                    <p>Download monthly In-Out attendance reports, including punch-in and punch-out times.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section class="section">
+        <h2>Analytics</h2>
+        <div class="card-container">
+            <!-- Activity Report Card -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <a href="{% url 'MinerActivity' %}">
+                <div class="card-content">
+                    <h3>Miner Activity Report</h3>
+                    <p>Download the Activity report for the organization.</p>
+                </div>
+                </a>
+            </div>
+            <!-- Apps/URLs Report Card -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-th"></i>
+                </div>
+                <a href="{% url 'LeadsActivity' %}">
+                <div class="card-content">
+                    <h3>Apps/URLs Report</h3>
+                    <p>Download a detailed application/URL usage report for the organization.</p>
+                </div>
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-th"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Apps/URLs Report</h3>
+                    <p>Download a detailed application/URL usage report for the organization.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-th"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Apps/URLs Report</h3>
+                    <p>Download a detailed application/URL usage report for the organization.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-th"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Apps/URLs Report</h3>
+                    <p>Download a detailed application/URL usage report for the organization.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-th"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Apps/URLs Report</h3>
+                    <p>Download a detailed application/URL usage report for the organization.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-th"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Apps/URLs Report</h3>
+                    <p>Download a detailed application/URL usage report for the organization.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-th"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Apps/URLs Report</h3>
+                    <p>Download a detailed application/URL usage report for the organization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

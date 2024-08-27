@@ -1,0 +1,17 @@
+{% extends "agentbase.html" %}
+{% load static %}
+{% block title %}Calling agent dashboard{% endblock %}
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/MinerActivity.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <img src="{% static 'Mining_Count.png' %}" alt="Attendance Chart">
+    {%for miners in Miner%}
+    <h1>{{miners.user.username}}</h1>
+    {%endfor%}
+    <h1>Total Minigs : {{Total_Mining}}</h1>
+    <h1>Expected Minigs : {{Exp_Mining}}</h1>
+</div>  
+{% endblock %}

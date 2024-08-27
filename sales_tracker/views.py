@@ -20,6 +20,7 @@ from users.models import Profile, RegisterUser
 from .models import MiningData, ContactData, LeadsData, OpportunityData, QuotesData , CallingAgent
 from .forms import MiningForm, ContactForm, LeadForm, OpportunityForm, QuoteForm
 from .analysis import generate_bar_chart, TotalDays
+from .admin_analysis import Att_perct,Late_perct ,Mining_Count,Leads_Count
 from .requirements import timer
 from django.http import HttpResponseForbidden
 import datetime
@@ -47,9 +48,14 @@ def get_timer_value(request):
 class IndexView(TemplateView):
     template_name = "sales_tracker/index.html"
     def dispatch(self, request, *args, **kwargs):
-        if self.request.user.profile.branch != 'miner':
+        if self.request.user.profile.branch != 'miner': 
             return HttpResponseForbidden("You do not have access to this page.")
         return super().dispatch(request, *args, **kwargs)
+    # def dispatch(self, request, *args, **kwargs):
+    #     print("Thisis ")
+    #     if self.request.user.profile.branch == 'agent': 
+    #         self.template_name = "sales_tracker/agent.html"
+    #     return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context =  super().get_context_data(**kwargs)
@@ -825,6 +831,52 @@ class Admin(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         attendances = AttendanceRecord.objects.all()
+        att = Att_perct()
+        late = Late_perct()
         context['admin_message'] = "Welcome to the Admin Page"
         context['attendances'] = attendances
+        context['att'] = att
+        context['late'] = Late_perct 
         return context
+
+class Admin_reports(TemplateView):
+    template_name = "sales_tracker/reports.html"
+    def get_context_data(self, **kwargs):
+        context =  super().get_context_data(**kwargs)
+
+        return context
+
+
+class MinerActivity(TemplateView):
+    template_name = "sales_tracker/MinerActivity.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        Mining_Count()
+        Miner = Profile.objects.filter(branch = "miner")
+        MinerC = Profile.objects.filter(branch = "miner").count()
+        Total_Mining = MiningData.objects.count()
+        Exp_Mining =   AttendanceRecord.objects.values('date').distinct().count()
+        context['Miner'] = Miner
+        context['Total_Mining'] = Total_Mining
+        context['Exp_Mining'] = Exp_Mining*MinerC*40
+        # context['MinerC'] = MinerC
+        return context
+    
+
+
+
+class LeadsActivity(TemplateView):
+    template_name = "sales_tracker/LeadsActivity.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        Leads_Count()
+        Agents = Profile.objects.filter(branch = "agent")
+        AgentsC = Profile.objects.filter(branch = "agent").count()
+        Total_Leads = LeadsData.objects.count()
+        Exp_Leads =   AttendanceRecord.objects.values('date').distinct().count()
+        context['Agents'] = Agents
+        context['Total_Leads'] = Total_Leads
+        context['Exp_Leads'] = Exp_Leads*AgentsC*4
+        # context['MinerC'] = MinerC
+        return context
+    
