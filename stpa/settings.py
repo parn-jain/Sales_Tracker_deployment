@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_zn&3l08*xa0#$*v7l8y#h^v1)7#w$&_c)s=+z$(f7v8f3hhu=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,7 +49,7 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 SESSION_COOKIE_AGE = 15*60
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',    
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -111,7 +111,7 @@ WSGI_APPLICATION = 'stpa.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'shanaya',
+        'NAME': 'parnjain$shanaya',
         'USER': 'admin',
         'PASSWORD':'Hello8349',
         'HOST' : 'shanaya.cdays8ewiw5f.ap-southeast-2.rds.amazonaws.com',
@@ -184,7 +184,7 @@ EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = "gururajhr0305l@gmail.com"
 # EMAIL_HOST_PASSWORD = "vhax huoc shhq qjmh"
 EMAIL_HOST_USER = "pjisvgreat@gmail.com"
-EMAIL_HOST_PASSWORD = "axzf ekbv uawt rugt" 
+EMAIL_HOST_PASSWORD = "axzf ekbv uawt rugt"
 
 TIME_ZONE = 'Asia/Kolkata'
 USE_TZ = True
