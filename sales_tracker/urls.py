@@ -1,19 +1,21 @@
 from django.urls import path
 from . import views
-# from .views import Admin
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
-    path("", login_required(views.IndexView.as_view()), name="index"),
-    path("adminn", login_required(views.Admin.as_view()), name="adminn"),
+    path("", login_required(views.Dashboards), name="Dashboards"),
+    # path("adminn", login_required(views.Admin.as_view()), name="adminn"),
     path('attendance/', (views.Attendence), name='attendance'),
-    path("agent/", login_required(views.Agent.as_view()), name="agent"),
+    # path("agent/", login_required(views.Agent.as_view()), name="agent"),
     path("agent/<pk>", login_required(views.DetailCalling), name="detail_agent"),
 
     path("Attendence/", login_required(views.Attendence), name="attendance"),
     path("reports/", login_required(views.Admin_reports.as_view()), name="reports"),
     path("reports/MinerActivity/", login_required(views.MinerActivity.as_view()), name="MinerActivity"),
+    # path("reports/DailyAttendence/", login_required(views.DailyAttendence.as_view()), name="DailyAttendence"),
+    path("reports/MinerActivity/<pk>", login_required(views.EmployeeDetail.as_view()), name="EmployeeDetail"),
     path("reports/LeadsActivity/", login_required(views.LeadsActivity.as_view()), name="LeadsActivity"),
+    path("reports/Analysis/", login_required(views.AdminAnalysis.as_view()), name="AdminAnalysis"),
 
     path("mining", login_required(views.mining_view), name = "mining"),
     path("data", login_required(views.DataView.as_view()), name = "data"),

@@ -1,0 +1,15 @@
+{% extends "adminbase.html" %}
+{% load static %}
+{% block title %}Calling agent dashboard{% endblock %}
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/employeeActivity.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <img  src="{% static 'bar_chart.png' %}" alt="Attendance Chart">
+    <img class="attpiechart rotate" src="{% static 'EachMinerTarget.png' %}" alt="Attendance Chart">
+    <h5>Target: {{Miner_Details.Target}}</h5>
+    <h5>Acchieved: {{Miner_Details.Acchieve}}</h5>
+</div>  
+{% endblock %}

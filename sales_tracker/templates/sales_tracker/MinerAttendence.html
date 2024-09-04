@@ -1,14 +1,29 @@
 {% extends "innerbase.html" %}
 {% load static %}
 {% block css_link %}
-<link rel="stylesheet" href="{% static 'sales_tracker/MinerAttendence.css' %}">
+
+
+<!-- <link rel="stylesheet" href="{% static 'base.css' %}"> -->
+ <link rel="stylesheet" href="{% static 'sales_tracker/minerattendance2.css' %}">
+
 {% endblock %}
 
 {% block title %}Attendance{% endblock %}
 
 {% block content %}
-<h1>Hello {{ u }}</h1>
-<img src="{% static 'bar_chart.png' %}" alt="Attendance Chart">
+<!-- <h1>Hello {{ u }}</h1> -->
+
+
+    <div class="row mt-2 mb-2 ">
+        <div class="col-md-2 center-text  moving_title " 
+        style="color: white;">
+        Hello {{ u }} </div>
+
+
+<div class="chart-container">
+    <img src="{% static 'bar_chart.png' %}" alt="Attendance Chart">
+</div>
+
 
 <div class="card-container">
     <div class="card">

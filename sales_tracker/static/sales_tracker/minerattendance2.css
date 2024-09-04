@@ -1,0 +1,214 @@
+.moving_title {
+    all:unset;
+    font-size: 35px ;
+    /* font-weight: bold; */
+    /* color: #333; */
+    position: relative;
+    background: linear-gradient(90deg, rgba(0, 102, 204, 1) 0%, rgba(173, 216, 230, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* padding: 10px; */
+    text-align: center;
+    letter-spacing: 2px;
+    /* margin-right:300px; */
+    margin-left: 700px; 
+}
+
+.col-md-2 {
+    font-family: 'Georgia';
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100hw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(54, 53, 53);
+    /* color: rgb(54, 53, 53); */
+
+}
+
+/* Wrapping container to hold both navbar and content */
+.wrapper {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+    width: 100%;
+}
+
+/* Styling for the fixed navbar */
+.navbar {
+    margin-left: 0px;
+    width: 200px; /* Fixed width for the navbar */
+    position: fixed; /* Fixes the navbar to the left of the screen */
+    height: 100%; /* Full height */
+    background-color: #333;
+    padding-top: 20px;
+    z-index: 1000; /* Ensures the navbar stays on top of other elements */
+    color: white;
+    /* top: 0;
+    left: 0; */
+}
+
+
+
+.navbar-container {
+    margin-left: -80px;
+    /* align-items: center; */
+    /* justify-content: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+}
+/* .navbar-container{
+    text-align: center;
+    margin-left: 5px;
+    padding: 10px;
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+} */
+
+
+/* Content styling */
+.content {
+    margin-left: 200px; /* No extra margin needed since the body padding handles it */
+    padding: 20px;
+    flex: 1;
+    background-color: #f9f9f9;
+    width: calc(100% - 200px);
+    display: flex;
+    flex-direction: column;
+    /* max-width: 1200px;
+    width: 100%; */
+    box-sizing: border-box;
+}
+
+/* Center everything on the page */ 
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+} */
+
+ /* Center everything on the page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+/* Style the heading */
+h1 {
+    margin-left: 500px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white !important;
+}
+
+/* Container for the cards */
+.card-container 
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 700px;
+    margin-left: 0px;
+    padding: 20px;
+    box-sizing: border-box;
+    /* margin-right: 800px; */
+}
+
+/* Style for individual cards */
+.card {
+    background: linear-gradient(90deg, rgba(184, 228, 243, 0.979) 0%, rgb(48, 186, 163) 100%) !important;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+    color: #333;
+    font-size: 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Style the card content */
+.card p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Adjust margins on smaller screens */
+@media (max-width: 600px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        margin: 10px 0;
+        width: 80%;
+    }
+}
+
+/* Styling for the chart container */
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 20px;
+
+    /* margin-right: auto; */
+    /* margin-left: 500px; */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    /* background-color: #fff; */
+
+  
+}
+
+/* Styling for the chart image */
+.chart-container img {
+    /* margin-bottom: 100px;
+    margin-right: 600px; */
+    max-width: 100%; /* Ensures the chart image is responsive */
+    height: 500px;
+    border-radius: 10px;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 600px) {
+    .chart-container {
+        padding: 10px;
+    }
+
+    .chart-container img {
+        max-width: 100%;
+    }
+}
+/* Style the image */
+/* .chart-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} */

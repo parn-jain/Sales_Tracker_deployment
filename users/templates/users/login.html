@@ -38,7 +38,7 @@
         {% csrf_token %} <!-- Include CSRF token here -->
       
         <div>
-            <img class="hand" src="/static/hand.png" alt="Handshaking Image">
+            <img class="hand" src="\static\hand.jpg" alt="Handshaking Image">
         </div>
         <div class="login-header">
             <div class="welcome">Welcome Back</div>
@@ -48,8 +48,16 @@
                 <!-- <label>Email</label> -->
             </div>
             <div class="input-box">
-                <input type="password" name="password" placeholder="Password" class="login-input" required>
+                <input type="password" name="password"  id="password" placeholder="Password" class="login-input" required>
                 <!-- <label>Password</label> -->
+
+                <!-- see password button -->
+
+                <!-- <button type="button" class="see-password" onclick="togglePassword()">👁️</button> -->
+                <button type="button" class="see-password" onclick="togglePassword()">
+                    <img id="button" src="\static\passwordshow.png" alt="See Password" />
+                </button>
+
             </div>
             <button type="submit">Login</button>
             <div class="forgot-password">
@@ -65,6 +73,34 @@
 
 
 {% endblock %}
-{% block javascript %}{% endblock %}
+{% block javascript %}
+
+<script>
+    function togglePassword() {
+    var passwordField = document.getElementById("password");
+    var passwordFieldType = passwordField.type;
+    passwordField.type = passwordFieldType === "password" ? "text" : "password";
+    }
+</script>
+
+
+
+<!-- <script>
+    function togglePassword() {
+        var passwordField = document.getElementById("password");
+        var toggleIcon = document.getElementById("toggle-icon");
+        
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleIcon.src = "\static\passwordshow.png"; // Path to the open eye image
+        } else {
+            passwordField.type = "password";
+            toggleIcon.src = "\static\passwordhide.png"; // Path to the closed eye image
+        }
+    }
+</script> -->
+
+
+{% endblock %}
 
     

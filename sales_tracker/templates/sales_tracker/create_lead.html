@@ -5,7 +5,7 @@
 
 
 {% block css_link %}
-    <link rel="stylesheet" href="{% static 'sales_tracker/lead.css' %}">
+    <link rel="stylesheet" href="{% static 'sales_tracker/mining2.css' %}">
 {% endblock %}
 
 
@@ -18,26 +18,27 @@
   <form method="POST">
     {% csrf_token %}
     <div class="row mt-2 mb-2">
-      <div class="col-md-2" style="color: white;">
-        <h3>Create Lead</h3>
-      </div>
+      <div class="col-md-2 center-text moving_title" 
+      style="color: white;">
+      Create Lead </div>
+
       <div class="col-md-8"> </div>
       <div class="col-md-2">
 
        
         <div class="row buttons ">
-          <div class="col-md-6 d-flex  px-2 ">
-            <button type="submit" class="lead_button1">Submit</button>
+          <div class="col-md-6 d-flex justify-content-end px-2 ">
+            <button type="submit" class="button1">Submit</button>
           </div>
-          <div class="col-md-6 d-flex  px-2">
-            <button type="button" class="lead_button2">Cancel</button>
+          <div class="col-md-6 d-flex align-items-end px-2">
+            <button type="button" class="button2">Cancel</button>
           </div>
         </div>
 
       </div>
       <hr>
       <div class="row">
-        <div class="col-md-6 pt-5 pb-5 px-4" style="color: white;">
+        <div class="col-md-6 pt-5 pb-5 px-4" style="color: rgb(15, 14, 14);">
           <div class="form-group">
           {{form.lead_name|as_crispy_field}}
         </div>
@@ -53,7 +54,9 @@
           <div class="form-group">
           {{form.contact_number|as_crispy_field}}
         </div>
-        <div class="col-md-6 pt-5 px-4" style="color:white ; border-left: 1px solid #d8d7d7">
+        </div>
+        
+        <div class="col-md-6 pt-5 px-4" style="color:rgb(15, 14, 14) ; border-left: 1px solid rgb(15, 14, 14)">
           <div class="form-group">
           {{form.job_title|as_crispy_field}}
           </div>

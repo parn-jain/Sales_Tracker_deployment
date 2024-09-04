@@ -1,0 +1,213 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0; /* Remove default margins to manage layout manually */
+    background-color: #f9f9f9;
+    display: flex;
+    min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+}
+
+/* .heading_links {
+   
+    background: linear-gradient(90deg, rgba(0, 102, 204, 1) 0%, rgba(173, 216, 230, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
+    font-size: 2em;
+    text-align: center;
+    margin-left: -20px;
+    letter-spacing: 2px;
+
+} */
+
+.moving_title {
+    all:unset;
+    font-size: 35px ;
+    font-weight: bold;
+    /* color: #333; */
+    position: relative;
+    background: linear-gradient(to right, #2C3E50, #5e87b0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-right:300px;
+    margin-left: 270px; 
+}
+
+/* Define the keyframes for the animation */
+
+
+
+
+
+/* Styling for the fixed navbar */
+.navbar {
+    width: 200px; /* Fixed width for the navbar */
+    position: fixed; /* Fixes the navbar to the left of the screen */
+    top: 0;
+    left: 0;
+    height: 100%; /* Full height */
+    background-color: #333;
+    padding-top: 20px;
+    z-index: 1000; /* Ensures the navbar stays on top of other elements */
+    color: white;
+}
+
+/* Adjusting content to not overlap with the navbar */
+.content {
+    margin-left: 200px; /* Pushes the content to the right by the width of the navbar */
+    padding: 20px; /* Add some padding around the content */
+    flex: 1; /* Content takes up the remaining space */
+    background-color: #f9f9f9;
+}
+
+/* Styling for the form elements */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: normal;
+}
+
+/* Additional styling for form controls */
+.form_control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form_control label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form_control input,
+.form_control textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form_control input:focus,
+.form_control textarea:focus {
+    border-color: #4CAF50;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Optional: Styling for form-group elements */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    border-radius: 0;
+    padding: 0px 0;
+    background: transparent;
+    color: white;
+    box-shadow: none;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: #007bff;
+    outline: none;
+}
+
+.col-md-2 {
+    font-family: 'Georgia';
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100hw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(54, 53, 53);
+}
+
+.buttons {
+    width: 800px;
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* Align items to the right */
+}
+
+/* Base Styles for Button1 */
+.quote_button1 {
+    background: linear-gradient(135deg, #28a745, #218838);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: inline-block;
+    z-index: 10;
+    margin: 0 10px; /* Adjust margin as needed */
+    margin-right: -80px;
+    letter-spacing: 2px;
+}
+
+/* Hover State for Button1 */
+.quote_button1:hover {
+    background: linear-gradient(135deg, #218838, #28a745);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Active State for Button1 */
+.quote_button1:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Base Styles for Button2 */
+.quote_button2 {
+    background: linear-gradient(135deg, #e52323, #e23a3a);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin: 0 10px; /* Adjust margin as needed */
+    margin-left: 11px;
+    letter-spacing: 3px;
+}
+
+/* Hover State for Button2 */
+.quote_button2:hover {
+    background: linear-gradient(135deg, #ed3a40, #f60101);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Active State for Button2 */
+.quote_button2:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

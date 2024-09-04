@@ -10,7 +10,7 @@
     <div class="content-wrapper">
         <h1>Hello</h1>
         <ul class="call-list">
-            {% for tc in ToCall %}
+            {% for tc in Tocall %}
             <li><a href="{% url "detail_agent" tc %}">{{ tc.customer_first_name }}</a></li>
             {% endfor %}
         </ul>

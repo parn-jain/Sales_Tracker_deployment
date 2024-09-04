@@ -49,6 +49,17 @@ class AttendanceRecord(models.Model):
         return f"{self.user.email} - {self.date} - {self.status}"
 
 
+class DaysStatus(models.Model):
+    STATUS_CHOICES = (
+        ('Holiday', 'Holiday'),
+        ('Working Day', 'Working Day'),
+    )
+    date = models.DateField(unique=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES)
+
+    def __str__(self):
+        return f"{self.date} - {self.status}"
+
 
 
 

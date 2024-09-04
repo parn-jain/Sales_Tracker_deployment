@@ -28,9 +28,6 @@ Pipfile.lock
 !**/migrations/__init__.py
 
 # Django static files
-staticfiles/
-static/
-media/
 
 # SQLite database files
 *.sqlite3

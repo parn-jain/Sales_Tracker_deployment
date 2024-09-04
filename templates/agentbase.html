@@ -239,7 +239,7 @@
             labels: ['Completed', 'Remaining'],
             datasets: [{
                 label: 'Weekly Data',
-                data: [{{ mining_count }}, 40 - {{ mining_count }}],
+                data: [parseInt('{{ mining_count }}'), 40 - parseInt('{{ mining_count }}')],
                 backgroundColor: ['#4CAF50', '#e0e0e0'],
                 borderColor: ['#4CAF50', '#e0e0e0'],
                 borderWidth: 1
@@ -315,8 +315,8 @@
       }
 
       setInterval(updateCountDown, 1000);
-      {% block javascript %}{% endblock %}
     </script>
+    {% block javascript %}{% endblock %}
 
 <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
 <script src="{% static 'js/datatables/datatables.js' %}"></script>

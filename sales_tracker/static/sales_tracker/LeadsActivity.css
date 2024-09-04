@@ -1,0 +1,52 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+
+}
+
+.attpiechart {
+        margin-left: 330px;
+
+        /* width: 100px; Initial width */
+        /* height: auto; Maintain aspect ratio */
+        transition: transform 2s ease-in-out; /* Smooth transition */
+    }
+    
+    
+    
+    @keyframes rotateImage {
+        from {
+            transform: scale(1) rotate(0deg);
+        }
+        to {
+            transform: scale(1.2) rotate(360deg);
+        }
+    }
+    .attpiechart:hover {
+        animation: rotateImage 2s ease-in-out 1; /* Rotate and scale on hover, then stop */
+    }
+.container h1
+{
+    color:rgb(224, 187, 187);   
+}
+ 
+.leftpart {
+    font-size: 25px;
+    margin-top: 50px;
+    margin-left: 50px;
+    text-decoration: none;
+     
+}
+
+.rightpart1 {
+    font-size: 25px;
+    margin-left: 900px;
+    margin-top:  -220px;
+}
+
+.rightpart2 {
+    font-size: 25px;
+    margin-left: 900px;
+    margin-top:  30px;
+}

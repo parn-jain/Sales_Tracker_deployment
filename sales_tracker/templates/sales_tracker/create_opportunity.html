@@ -17,7 +17,7 @@
   <form method="POST">
     {% csrf_token %}
     <div class="row mt-2 mb-2">
-      <div class="col-md-2 center-text" style="color: white;"><h3>Create Opportunity</h3></div>
+      <div class="col-md-2 center-text moving_title"><h3>Create Opportunity</h3></div>
       <div class="col-md-8"> </div>
       <div class="col-md-2">
 
@@ -34,7 +34,7 @@
       </div>
       <hr>
       <div class="row">
-        <div class="col-md-6 pt-5 pb-5 px-4" style="color: white;">
+        <div class="col-md-6 pt-5 pb-5 px-4" style="color: rgb(15, 14, 14);">
           <div class="form-group">
           {{form.opportunity_name|as_crispy_field}}
           </div>
@@ -54,7 +54,7 @@
           {{form.lead_source|as_crispy_field}}
           </div>
         </div>
-        <div class="col-md-6 pt-5 px-4" style= "color: white ; border-left: 1px solid #d8d7d7;">
+        <div class="col-md-6 pt-5 px-4" style= "color: rgb(15, 14, 14) ; border-left: 1px solid rgb(15, 14, 14);">
           <div class="form-group">
           {{form.lead|as_crispy_field}}
           </div>
