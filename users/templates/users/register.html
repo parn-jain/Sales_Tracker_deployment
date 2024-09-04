@@ -9,32 +9,48 @@
 
 {% block content %}
 <div class="form_sec">
+    <div class="circle1"></div>
+    <div class="circle2"></div>
     <h2>Create Account</h2>
     <form method="POST" class="form">
         {% csrf_token %}
+        
         <div class="form-group">
-            {{ form.username.label_tag }}
-            {{ form.username }}
-            {{ form.username.errors }}
+            {% comment %} <label for="id_username">Username:</label> {% endcomment %}
+            <input type="text" name="username" id="id_username" placeholder="Username" maxlength="150" required>
+            <!-- Display errors here, if any -->
+            {% if form.username.errors %}
+                <div class="error">{{ form.username.errors }}</div>
+            {% endif %}
         </div>
+        
         <div class="form-group">
-            {{ form.email.label_tag }}
-            {{ form.email }}
-            {{ form.email.errors }}
+            {% comment %} <label for="id_email">Email:</label> {% endcomment %}
+            <input type="email" name="email" id="id_email" placeholder="Email" required>
+            <!-- Display errors here, if any -->
+            {% if form.email.errors %}
+                <div class="error">{{ form.email.errors }}</div>
+            {% endif %}
         </div>
+        
         <div class="form-group">
-            {{ form.password1.label_tag }}
-            {{ form.password1 }}
-            {{ form.password1.errors }}
+            {% comment %} <label for="id_password1">Password:</label> {% endcomment %}
+            <input type="password" name="password1" id="id_password1" placeholder="Password" required>
+            <!-- Display errors here, if any -->
+            {% if form.password1.errors %}
+                <div class="error">{{ form.password1.errors }}</div>
+            {% endif %}
         </div>
+        
         <div class="form-group">
-            {{ form.password2.label_tag }}
-            {{ form.password2 }}
-            {{ form.password2.errors }}
+            {% comment %} <label for="id_password2">Confirm Password:</label> {% endcomment %}
+            <input type="password" name="password2" id="id_password2" placeholder="Confirm Password" required>
+            <!-- Display errors here, if any -->
+            {% if form.password2.errors %}
+                <div class="error">{{ form.password2.errors }}</div>
+            {% endif %}
         </div>
-        <div class="form-group">
-            <input type="checkbox" id="remember-me"> <label for="remember-me">Remember me</label>
-        </div>
+        
         <button type="submit" class="signup-btn">Sign up</button>
     </form>
     <p class="login-link">Already have an account? <a href="{% url 'login' %}">Login</a></p>

@@ -9,7 +9,7 @@
 
 {% block content %}
 <div class="dashboard-container">
-    <h1>Data Mining Reports</h1>
+    <h1 style="color:black; text-align: center ;">Data Mining Reports</h1>
 
     <!-- Attendance Section -->
     <section class="section">
@@ -21,6 +21,7 @@
                     <i class="fas fa-clock"></i>
                 </div>
                 <div class="card-content">
+                    <img class="icon" src="/static/BreakIcon.png" alt="Break icon" style="height: 60px;">
                     <h3>Break Report</h3>
                     <p>Download reports of breaks taken by employees.</p>
                 </div>
@@ -30,10 +31,13 @@
                 <div class="card-icon">
                     <i class="fas fa-calendar-check"></i>
                 </div>
+                <a href="#">
                 <div class="card-content">
+                    <img class="icon" src="/static/DailyAtt.png" alt="Break icon" style="height: 60px;">
                     <h3>Daily Attendance</h3>
                     <p>Download daily attendance reports, including punch-in and punch-out times.</p>
                 </div>
+            </a>
             </div>
             <!-- Monthly Attendance Card -->
             <div class="card">
@@ -41,6 +45,7 @@
                     <i class="fas fa-calendar-alt"></i>
                 </div>
                 <div class="card-content">
+                    <img class="icon" src="/static/MonthlyAtt.png" alt="Break icon" style="height: 60px;">
                     <h3>Monthly Attendance</h3>
                     <p>Download monthly attendance reports, including punch-in and punch-out times.</p>
                 </div>
@@ -51,6 +56,7 @@
                     <i class="fas fa-exchange-alt"></i>
                 </div>
                 <div class="card-content">
+                    <img class="icon" src="/static/Pic.png" alt="Break icon" style="height: 60px;">
                     <h3>Monthly In-Out</h3>
                     <p>Download monthly In-Out attendance reports, including punch-in and punch-out times.</p>
                 </div>
@@ -69,6 +75,7 @@
                 </div>
                 <a href="{% url 'MinerActivity' %}">
                 <div class="card-content">
+                    <img class="icon" src="/static/activity report.png" alt="Break icon" style="height: 60px;">
                     <h3>Miner Activity Report</h3>
                     <p>Download the Activity report for the organization.</p>
                 </div>

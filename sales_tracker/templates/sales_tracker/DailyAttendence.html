@@ -1,0 +1,12 @@
+{% extends "adminbase.html" %}
+{% load static %}
+{% block title %}Calling agent dashboard{% endblock %}
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'sales_tracker/MinerActivity.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <img src="{% static 'DailyAttendence.png' %}" alt="Attendance Chart">
+</div>  
+{% endblock %}

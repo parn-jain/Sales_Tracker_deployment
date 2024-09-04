@@ -1,0 +1,43 @@
+/* Center the entire content block horizontally and vertically */
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    text-align: center;
+}
+
+/* Wrapper to contain the content */
+.content-wrapper {
+    width: 100%;
+    max-width: 600px; /* Limit the max width of the content */
+}
+
+/* Style the list */
+.call-list {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    margin: 0; /* Reset margin */
+}
+
+/* Style each list item */
+.call-list li {
+    background-color: #f0f0f0; /* Light gray background */
+    margin: 10px 0; /* Space between list items */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+/* Hover effect for list items */
+.call-list li:hover {
+    background-color: #ddd; /* Darker gray on hover */
+}
+
+/* Style the links */
+.call-list a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Dark text color */
+    display: block; /* Make the whole list item clickable */
+}

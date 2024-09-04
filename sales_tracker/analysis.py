@@ -75,6 +75,58 @@ def generate_bar_chart(request):
 
 
 
+
+
+def generate_bar_chart2(id):
+    print("this print statement is in bar chart functino in analysis.py")
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT status, COUNT(*) FROM users_attendancerecord where user_id = %s GROUP BY status;",[id])
+        data = cursor.fetchall()
+    
+    categories = [row[0] for row in data]
+    counts = [row[1] for row in data]
+        # categories, counts = zip(*data)
+    plt.figure(figsize=(10, 6))
+
+# Set the outer background color (the entire figure)
+    plt.gcf().set_facecolor('#262626')
+
+    # Create the bar chart with custom colors
+    bar_colors = ['green', 'yellow', 'red']
+    plt.bar(categories, counts, color=bar_colors)
+
+    # Get the current axis
+    ax = plt.gca()
+    
+    # Set the inner background color (the plot area)
+    ax.set_facecolor('#262626')
+
+    # Customize the grid (if needed, you can also remove it)
+    ax.grid(False)
+
+    # Set the labels and title with white text color
+    plt.xlabel('Attendance Status', color='white')
+    plt.ylabel('Number of Days', color='white')
+    plt.title('Attendance Status Overview', color='white')
+
+    # Customize the ticks color
+    plt.xticks(color='white')
+    plt.yticks(color='white')
+
+    # Remove the borders of the graph
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['left'].set_color('white')
+    ax.spines['bottom'].set_color('white')
+
+    # Ensure the background is completely covered
+    ax.patch.set_alpha(1.0)
+
+    # Save the figure with the customizations
+    plt.savefig('static/bar_chart.png', bbox_inches='tight', facecolor='#262626')    
+
+
+
 def TotalDays(request):
     users = request.user
     u = RegisterUser.objects.get(email=users)

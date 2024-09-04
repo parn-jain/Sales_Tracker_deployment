@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.heading {
+   
+    /* background: linear-gradient(90deg, #3e3a3a 0%, rgb(63, 59, 59) 100%); */
+    background: linear-gradient(to right, #2C3E50, #5e87b0);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 100%;
+    padding: 10px;
+    font-size:70px;
+    font-weight:bold;
+    text-align: center;
+    margin-left: -20px;
+    letter-spacing: 6px;
+    /* margin-top: 30px; */
+    
+    margin-bottom: 45px;
+
+}
+
+.title_animation {
+  
+        font-size: 36px;
+        font-weight: bold;
+        color: #333;
+        animation: pulse 15s infinite;
+  
+    }
+
+     @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    
+
+.content{
+    /* background: rgba(245, 245, 245, 0.463); */
+    background-color: #e0eaf6;
+    /* background: white; */
+    width: 100vw;
+<<<<<<< HEAD
+    /* height: 100vw; */
+    
+    background-color: #FAF9F6;
+    /* background: linear-gradient(to right ,#19191a7a, #5b87bc79, #19191a7a); Pale Blue to Soft Gray  */
+=======
+>>>>>>> 04fdcb6ec1db550a2b91d3b0e50a9c77719f5735
+    position: relative;
+    z-index: -1;
+}
+
+.welcome {
+    
+    font-size: 25px;          /* Adjust the font size as needed */
+    font-weight: bolder;        /* Optional: make the text bold */
+    text-align: center;    /* Center the text inside the paragraph */
+    color: white;
+}
+
+.flex-container {
+    margin-top: 20px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between; 
+    justify-content: center;
+    align-items: flex-start; /* Align the cards vertically centered */
+    flex-wrap: wrap; /* Allow wrapping if the screen is too small */
+    /* background-color: #262626; */
+}
+
+.cards-container {
+    border-color: #262626;
+    /* background-color: white;  */
+    width: 100%;
+    padding: 10px;
+     
+     
+}
+
+.card {
+    /* flex: 1; Allow cards to grow evenly */
+    margin: 10px; /* Add some space between the cards */
+    min-width: 200px; /* Ensure cards have a minimum width */
+    max-width: 250px; /* Set a maximum width for consistency */
+    padding: 0px; /* Add some padding around the container */
+    border: none;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(81, 113, 145, 0.5); 
+    background-color: #007d7e; 
+    overflow: hidden;
+    flex: 1 1 calc(50% - 20px); /* Allows two cards per row with space between them */
+ }
+
+.card-body {
+     padding: 10px; /* Space inside the cards */
+    text-align: center; /* Center the text inside the cards */
+    background: #1E2A38;
+    /* background: linear-gradient(to right ,#517191, #5e87b0); */
+    /* background: linear-gradient(90deg, rgb(230, 173, 173) 0%, rgba(255, 255, 255, 1) 100%); */
+    width: 100%;        
+}
+
+/* .card_bg {
+    background: linear-gradient(90deg, rgba(67, 193, 65, 1) 41%, rgba(0, 212, 211, 1) 99%, rgba(238, 130, 238, 1) 100%);
+
+}     */
+
+.card-text, .card-title {
+    color:white; /* Replace with your desired color */
+  }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between items */    
+}
+
+.card canvas {
+    margin: 0 auto;
+    display: block;
+}
+
+@media  (max-width:970px)
+{
+    .card {
+        min-width: 250px ;
+    }
+}

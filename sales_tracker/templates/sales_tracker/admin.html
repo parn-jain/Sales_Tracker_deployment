@@ -4,21 +4,26 @@
 {% block title %}Admin{% endblock %}
 
 {% block css_link %}
-<link rel="stylesheet" href="{% static 'sales_tracker/MinerAttendence.css' %}">
+<link rel="stylesheet" href="{% static 'sales_tracker/admin.css' %}">
 {% endblock %}
 
 
 
 {% block content %}
-<img src="{% static 'admin_attendence.png' %}" alt="Attendance Chart">
+<div>{{ attendence_graph|safe }}</div>
+<!-- <div class="chart-container">
+    <img class="chart1" src="{% static 'admin_attendence.png' %}" alt="Attendance Chart">
+    <img src="{% static 'Time_worked.png' %}" alt="Attendance Chart">
+</div> -->
 
-<div class="card-container">
+  <!-- <div class="card-container">
     <div class="card">
         <p>Attendence : {{ att }}</p>
     </div>
     <div class="card">
         <p>Late : {{ late }}</p>
     </div>
-</div>
+  </div>
+</div> -->
 {% endblock %}
 

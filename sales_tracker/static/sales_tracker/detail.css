@@ -1,0 +1,61 @@
+
+body,
+html,
+h1,
+h2,
+p,
+section,
+div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif; 
+}
+
+
+section {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+
+.client,
+.info {
+  background-color: #eee;
+  padding: 15px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.client h2 {
+  margin-bottom: 10px; 
+  font-size: 1.9em; 
+}
+
+
+p {
+  margin-bottom: 5px;
+  margin: 30px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+hr {
+  border: 1px solid #ddd; 
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+}

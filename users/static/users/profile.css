@@ -1,0 +1,31 @@
+.display_none {
+    display: none;
+}
+
+body {
+    margin: 0; /* Remove default browser margins */
+    font-family: Arial, sans-serif; /* Set a clean, modern font */
+  }
+  
+  h1 {
+    text-align: center; /* Center the profile title */
+    margin-bottom: 20px; /* Add some space below the title */
+    font-size: 2em; /* Increase title size */
+  }
+  
+  p {
+    margin-bottom: 10px; /* Add spacing between paragraphs */
+  }
+  
+  .info {
+    display: flex; /* Use flexbox for responsive layout */
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+    justify-content: space-between; /* Distribute items evenly */
+    margin-bottom: 20px; /* Add spacing below info sections */
+  }
+  
+  .info label {
+    font-weight: bold; /* Make labels stand out */
+    width: 120px; /* Set a minimum width for labels */
+    text-align: right; /* Align labels to the right */
+  }

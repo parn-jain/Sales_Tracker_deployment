@@ -1,0 +1,40 @@
+/* profiledetail.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Base font family */
+    background-color: #f5f5f5; /* Light background color */
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2em; /* Increase title size */
+  }
+  
+  p {
+    margin-bottom: 15px;
+    line-height: 1.5; /* Improve readability with proper line spacing */
+  }
+  
+  .profile-info {
+    display: flex; /* Use flexbox for responsive layout */
+    flex-direction: column;
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+    justify-content: space-between; /* Distribute items evenly */
+    width: 80%; /* Limit content width for better desktop scaling */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 20px; /* Add padding for better spacing */
+    border: 1px solid #ddd; /* Add a subtle border */
+    border-radius: 5px; /* Add rounded corners for a softer look */
+    background-color: #fff; /* White background for content */
+  }
+  
+  .profile-info span.label {
+    font-weight: bold;
+    width: 120px; /* Minimum width for labels */
+    text-align: right; /* Align labels to the right */
+    margin-right: 10px; /* Add spacing between label and value */
+  }
+  

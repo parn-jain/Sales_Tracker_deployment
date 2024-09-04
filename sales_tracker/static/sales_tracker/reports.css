@@ -1,0 +1,107 @@
+/* Dashboard Container */
+.dashboard-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    /* color: #FFFFFF;
+    font-size: 26px;
+    border-bottom: 3px solid #5e87b0;
+    padding-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: 1px; */
+    color:black;
+    font-size: 24px;
+    border-bottom: 2px solid gray;
+    padding-bottom: 10px;
+
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* Individual Card */
+.card {
+
+    background: #1E2A38 !important; /* Changed background to a solid dark color */
+    border: 1px solid #3C4A5E;
+    border-radius: 12px;
+    flex: 1 1 calc(25% - 25px); /* Adjusted width and gap */
+    min-width: 260px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left; /* Ensures text is left-aligned */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Icon */
+.card-icon {
+    font-size: 45px;
+    color: #5e87b0; /* Adjusted icon color for consistency */
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+/* Card Content */
+.card-content h3 {
+/* <<<<<<< HEAD*/
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    color: #ffffff; /* Changed to white for contrast*/
+    font-weight: 500;
+    align-items: center;
+/*======= */
+    /* margin: 0 0 10px 0;
+    font-size: 18px;
+    color:beige;
+    color: #333;  */
+/* >>>>>>> 04fdcb6ec1db550a2b91d3b0e50a9c77719f5735 */
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 15px;
+    color: #a9b7c6; /* Softened text color for readability */
+
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .card {
+        flex: 1 1 calc(33.333% - 25px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 25px);
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}

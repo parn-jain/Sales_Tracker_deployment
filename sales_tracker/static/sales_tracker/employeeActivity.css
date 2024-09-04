@@ -1,0 +1,28 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+
+}
+
+.attpiechart {
+    transition: transform 0.5s ease;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.attpiechart:hover {
+    animation: pulse 1s infinite;
+}
+.container h1
+{
+    color:rgb(224, 187, 187);   
+}
+  

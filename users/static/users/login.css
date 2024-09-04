@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    /* background: linear-gradient(115deg, #5c5c97, #4360ad); */
+    background: linear-gradient(90deg, rgba(128, 0, 128, 1) 0%, rgba(75, 0, 130, 1) 50%, rgba(138, 43, 226, 1) 100%);
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.login-wrapper {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left:400px;
+    /* margin-right: 20px; */
+}
+
+.welcome{
+    width: 100%;
+    color:#d6c9c9;
+    font-size: 40px;
+    margin-left: 17px;
+    margin-bottom: 35px;
+    font-weight:400;
+    font-family: "Poppins", sans-serif;
+
+ }
+
+/* Circles */
+.circle1 {
+    position: absolute;
+    width: 13em;
+    height: 13em;
+    border-radius: 50%;
+    background: linear-gradient(-25deg, #d84869, #f46641);
+    top: 5%;
+    left: 30%;
+    box-shadow: 0 0 50px #d84869;
+    animation: circle1Animate 15s infinite;
+  }
+  
+  @keyframes circle1Animate {
+    50% {
+      left: 33%;
+      top: 4%;
+      scale: 1.11;
+    }
+  }
+
+  .circle1:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+  
+  .circle2 {
+    position: absolute;
+    bottom: 5%;
+    right: 30%;
+    width: 19em;
+    height: 19em;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #5648d8;
+    background: linear-gradient(-25deg, #5648d8, #8641f4);
+    animation: circle2Animate 15s infinite;
+  }
+  
+  @keyframes circle2Animate {
+    50% {
+      bottom: 6%;
+      right: 31%;
+    }
+  }
+  
+  .circle2:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.login-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.hand {
+    width: 100px; 
+    height: 110px;
+    margin-left: 105px;
+    margin-bottom: 20px;
+}
+
+
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.input-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ccc;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -20px;
+    font-size: 12px;
+    color: #fff;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(115deg, #ff6f61, #de6262);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(115deg, #de6262, #ff6f61);
+    transform: translateY(-3px);
+}
+
+.login-input:hover {                       /******************************************************/
+    /* border-color: #ffffff;  */
+    outline:#ffffff;
+    /* box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);  */
+    border:2px solid white ;
+    border-radius: 10%;
+    
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.forgot-password a {
+    color: #ff6f61;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.signup-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-text a {
+    color: #ff6f61;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+.create_link{
+    text-decoration: none;
+    color: rgb(5, 157, 5);
+    font-size: large;
+
+}
+
+.errorlist li{
+    color: red;
+
+}
+
+/* Container for the password field and see password button */
+.password-container {
+    position: relative;
+}
+
+.login-input {
+    width: 100%;
+    padding-right: 40px; /* Ensure space for the see password button */
+}
+
+.see-password {
+    position: absolute;
+    margin-right: 0px;
+    /* left: 150px; */
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    /* font-size: 1.2rem; */
+    color: #333;
+    margin: 100;
+    padding: 0;
+    width: auto;
+    display: flex;
+}
+
+
+/* Remove hover effects or margin changes */
+.see-password:hover {
+    background: none; /* No background change on hover */
+    color: #333; /* Maintain the same color */
+    transform: translateY(-50%); /* Ensure it stays centered */
+}
+
+.see-password img {
+    width: 20px; /* Adjust the size of the eye icon */
+    height: auto;
+}

@@ -32,25 +32,25 @@
     <div class="flex-container cards-container z-[-10]  " >
         <div class="card ">
             <div class="card-body ">
-                <h5 class="card-title" style="color: #262626;"><b>Today's Mining</b></h5>
+                <h5 class="card-title" style="color: white;"><b>Today's Mining</b></h5>
                 <p class="card-text">{{ mining_count }}/40</p>
             </div>
         </div>
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title" style="color: #262626;"><b>Today's Opportunity</b></h5>
+                <h5 class="card-title" style="color: white;"><b>Today's Opportunity</b></h5>
                 <p class="card-text">{{ Opportunity_count }}</p>
             </div>
         </div>
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title" style="color: #262626;"><b>Today's Contacts</b></h5>
+                <h5 class="card-title" style="color: white;"><b>Today's Contacts</b></h5>
                 <p class="card-text">{{ contact_count }}</p>
             </div>
         </div>
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title" style="color: #262626;"><b>Today's Leads</b></h5>
+                <h5 class="card-title" style="color:  white;"><b>Today's Leads</b></h5>
                 <p class="card-text">{{ lead_count }}</p>
             </div>
         </div>
@@ -59,17 +59,17 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <div class="flex-container charts-container">
+    <div class="flex-container card-container">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title" style="color: #262626;"><b>Weekly Data</b></h5>
+                <h5 class="card-title" style="color:  white;"><b>Weekly Data</b></h5>
                 <canvas id="weeklyChart" width="130" height="150" ></canvas>
-                <p class="card-text backgroundColor: '#FF6600'">{{ mining_count }}/40</p>
+                <p class="card-text">{{ mining_count }}/40</p>
             </div>
         </div>
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title" style="color: #262626;"><b>Monthly Data</b></h5>
+                <h5 class="card-title" style="color:  white;"><b>Monthly Data</b></h5>
                 <canvas id="monthlyChart" width="130" height="100"></canvas>
                 <p class="card-text">{{ mining_count }}</p>
             </div>
@@ -77,7 +77,7 @@
         
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title" style="color: #262626;"><b>Quarterly Data</b></h5>
+                <h5 class="card-title" style="color: white;"><b>Quarterly Data</b></h5>
                 <canvas id="quarterlyChart" width="130" height="100"></canvas>
                 <p class="card-text">{{ mining_count }}</p>
             </div>
